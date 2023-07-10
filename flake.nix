@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -24,7 +24,7 @@
 
           nativeBuildInputs = [ pkgs.bison pkgs.flex ];
 
-          buildInputs = [ pkgs.openjdk11_headless ];
+          propagatedBuildInputs = [ pkgs.openjdk11_headless ];
 
           enableParallelBuilding = true;
           preConfigure = "cd sketch-backend";
